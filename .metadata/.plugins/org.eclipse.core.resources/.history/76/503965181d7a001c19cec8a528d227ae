@@ -1,0 +1,65 @@
+package co.edu.iudigital.app.model;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "casos")
+public class Caso implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column(name = "fecha_hora")
+	private LocalDateTime fechaHora;
+	
+	private float latitud;
+	
+	private float longiyud;
+	
+	private Boolean visible;
+	
+	private String descripcion;
+	
+	@Column(name = "url_map")
+	private String urlMap;
+	
+	@Column(name = "rmi_url")
+	private String rmiUrl;
+	
+	@ManyToOne
+	@JoinColumn(name = "usuarios_id")
+	private Usuario usuarioId;
+	
+	@ManyToOne
+	@JoinColumn(name = "delitos_id")
+	private Delito delito;
+	
+	@PrePersist
+	public void prePersist() {
+		if(fechaHora == null) {
+			fechaHora = LocalDateTime.now();
+		}
+	}
+	
+	
+	
+		
+
+}
