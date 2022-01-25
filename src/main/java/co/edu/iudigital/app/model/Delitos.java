@@ -1,3 +1,4 @@
+
 package co.edu.iudigital.app.model;
 
 import java.io.Serializable;
