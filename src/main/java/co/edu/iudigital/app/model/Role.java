@@ -2,14 +2,16 @@ package co.edu.iudigital.app.model;
 
 import java.io.Serializable;
 
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.security.RolesAllowed;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.NonNull;
 
 @Entity
 @Table(name = "Roles")
@@ -23,7 +25,7 @@ public class Role implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	
+	@NonNull
 	@Column(nullable = false, length = 45)
 	private String nombre;
 	

@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.NonNull;
+
 @Entity
 @Table
 public class Delitos implements Serializable{
@@ -22,6 +24,8 @@ public class Delitos implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	
+	@NonNull
 	@Column(nullable = false, length = 45)
 	private String nombre;
 	

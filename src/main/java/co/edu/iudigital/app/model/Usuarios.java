@@ -2,19 +2,19 @@ package co.edu.iudigital.app.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
 import javax.persistence.Table;
 
-import org.springframework.lang.NonNull;
 
-import net.bytebuddy.implementation.bind.annotation.Empty;
+
+
 
 
 @Entity
@@ -23,13 +23,15 @@ import net.bytebuddy.implementation.bind.annotation.Empty;
 public class Usuarios implements Serializable{
 	
 	
+	private static final String NOMBRE_IS_REQUIRED = "nombre is required";
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	
+	@NotEmpty(message = "Email es obligatorio")
 	@Column(unique = true, length = 120)
 	private String username;
 	
@@ -39,6 +41,7 @@ public class Usuarios implements Serializable{
 	@Column(nullable = false, length = 120)
 	private String nombre;
 	
+	@NotEmpty(message = NOMBRE_IS_REQUIRED)
 	@Column(nullable = true, length = 120)
 	private String apellido;
 	
@@ -53,7 +56,7 @@ public class Usuarios implements Serializable{
 	private String image;
 	
 	 
-		// TODO Auto-generated method stub
+		
 
 	 
 	

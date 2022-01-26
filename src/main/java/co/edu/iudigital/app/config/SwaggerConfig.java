@@ -1,16 +1,16 @@
 package co.edu.iudigital.app.config;
 
-import java.util.Collections;
+
 
 import org.springframework.context.annotation.Configuration;
 
-import io.swagger.models.Contact;
-import springfox.documentation.builders.ApiInfoBuilder;
+
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spi.service.contexts.ApiSelector;
+
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -36,7 +36,7 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo ApiInfo() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	
