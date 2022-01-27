@@ -26,6 +26,8 @@ public class Usuarios implements Serializable{
 	private static final String NOMBRE_IS_REQUIRED = "nombre is required";
 
 	private static final long serialVersionUID = 1L;
+
+	private static final String obligatorio = null;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +39,7 @@ public class Usuarios implements Serializable{
 	
 	@Column(length = 120)
 	private String password;
+	
 	
 	@Column(nullable = false, length = 120)
 	private String nombre;

@@ -2,6 +2,8 @@ package co.edu.iudigital.app.config;
 
 
 
+import java.util.Collection;
+
 import org.springframework.context.annotation.Configuration;
 
 
@@ -32,7 +34,7 @@ public class SwaggerConfig {
 				)
 				.paths(PathSelectors.any())
 				.build()
-				.apiInfo(ApiInfo());
+				.apiInfo(ApiInfo.DEFAULT);
 	}
 
 	private ApiInfo ApiInfo() {
